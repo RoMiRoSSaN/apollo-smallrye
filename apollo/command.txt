@@ -1,0 +1,26 @@
+npx @apollo/rover supergraph compose --config ./supergraph.yaml -o supergraph.graphql
+
+.\router.exe --dev --supergraph supergraph.graphql
+
+
+request
+
+
+{
+  me {
+    id
+    name
+    roles {
+      id
+      value
+      users {
+        id
+        name
+        roles {
+          id
+          value
+        }
+      }
+    }
+  }
+}
